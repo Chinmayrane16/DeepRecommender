@@ -45,4 +45,10 @@ class AutoEncoder(nn.Module):
         """
 
         super(AutoEncoder, self).__init__()
-        
+
+        self.layer_sizes = layer_sizes
+        self.nl_type = nl_type
+        self.is_constrained = is_constrained
+        self.dp_drop_prob = dp_drop_prob
+        self.last_layer_activations = last_layer_activations
+
