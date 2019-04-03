@@ -111,5 +111,6 @@ class AutoEncoder(nn.Module):
         return x
 
     def forward(self,x):
+        # Forward Pass
         return self.decode(self.encode(x))
 
