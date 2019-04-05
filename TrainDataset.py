@@ -6,6 +6,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 import matplotlib.pyplot as plt
 
+
 class TrainDataset(Dataset):
     def __init__(self, train_file, transform=None):
         self.data = pd.read_csv(train_file)
