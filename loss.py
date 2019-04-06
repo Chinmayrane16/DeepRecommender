@@ -2,17 +2,21 @@ import torch
 import torch.nn as nn
 from torch.autograd import Variable
 
+class MSEloss_with_Mask(nn.Module):
+  def __init__(self):
+    super(MSEloss_with_Mask,self).__init__()
 
-def MSEloss_with_Mask(inputs, target):
+  def forward(self,inputs, targets):
     # Masking into a vector of 1's and 0's.
-  mask = [float(i!=0.0) for i in target]
-  mask = torch.tensor(mask)
+    mask = (targets!=0)
+    mask = mask.float()
 
-  # Actual number of ratings.
-  number_ratings = torch.sum(mask)
-  # To avoid division by zero while calculating loss.
-  number_ratings = 1.0 if number_ratings == 0.0 else number_ratings
-  
-  error = torch.sum(torch.mul(mask,torch.mul((target-inputs),(target-inputs))))
-  loss = error.div(number_ratings)
-  return loss
+    # Actual number of ratings.
+    # Take max to avoid division by zero while calculating loss.
+    other = torch.Tensor([1.0])
+    other = other.cuda()
+    number_ratings = torch.max(torch.sum(mask),other)
+    error = torch.sum(torch.mul(mask,torch.mul((targets-inputs),(targets-inputs))))
+    loss = error.div(number_ratings)
+    loss = loss.data[0]
+    return loss
