@@ -58,7 +58,7 @@ class AutoEncoder(nn.Module):
         self._last = len(layer_sizes) - 2
 
         # Initaialize Weights
-        self.encoder_weights = nn.ParameterList( [nn.Parameter(torch.rand(layer_sizes[i+1], layer_sizes[i])) for i in range(len(layer_sizes)) - 1 ] )
+        self.encoder_weights = nn.ParameterList( [nn.Parameter(torch.rand(layer_sizes[i+1], layer_sizes[i])) for i in range(len(layer_sizes) - 1)  ] )
 
         # "Xavier Initialization" ( Understanding the Difficulty in training deep feed forward neural networks - by Glorot, X. & Bengio, Y. )
         # ( Values are sampled from uniform distribution )
@@ -66,7 +66,7 @@ class AutoEncoder(nn.Module):
             init.xavier_uniform_(weights)
 
         # Encoder Bias
-        self.encoder_bias = nn.ParameterList( [nn.Parameter(torch.zeros(layer_sizes[i+1])) for i in range(len(layer_sizes)) - 1] )
+        self.encoder_bias = nn.ParameterList( [nn.Parameter(torch.zeros(layer_sizes[i+1])) for i in range(len(layer_sizes) - 1) ] )
 
         reverse_layer_sizes = list(reversed(layer_sizes)) 
         # reversed returns iterator
@@ -74,12 +74,12 @@ class AutoEncoder(nn.Module):
 
         # Decoder Weights
         if is_constrained == False:
-            self.decoder_weights = nn.ParameterList( [nn.Parameter(torch.rand(reverse_layer_sizes[i+1], reverse_layer_sizes[i])) for i in range(len(reverse_layer_sizes)) - 1] )
+            self.decoder_weights = nn.ParameterList( [nn.Parameter(torch.rand(reverse_layer_sizes[i+1], reverse_layer_sizes[i])) for i in range(len(reverse_layer_sizes) - 1) ] )
 
             for weights in self.decoder_weights:
                 init.xavier_uniform_(weights)
 
-        self.decoder_bias = nn.ParameterList( [nn.Parameter(torch.zeros(reverse_layer_sizes[i+1])) for i in range(len(reverse_layer_sizes)) - 1] )
+        self.decoder_bias = nn.ParameterList( [nn.Parameter(torch.zeros(reverse_layer_sizes[i+1])) for i in range(len(reverse_layer_sizes) - 1) ] )
 
 
 
