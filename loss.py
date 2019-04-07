@@ -18,5 +18,4 @@ class MSEloss_with_Mask(nn.Module):
     number_ratings = torch.max(torch.sum(mask),other)
     error = torch.sum(torch.mul(mask,torch.mul((targets-inputs),(targets-inputs))))
     loss = error.div(number_ratings)
-    loss = loss.data[0]
-    return loss
+    return loss[0]
