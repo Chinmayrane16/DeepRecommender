@@ -2,7 +2,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" width="11%"> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository is an implementation of the research paper by NVIDIA:
+This repository is an implementation of the research paper by NVIDIA :
 
 **Training Deep AutoEncoders for Collaborative Filtering**<br>
 \- Oleksii Kuchaiev and Boris Ginsburg<br>
