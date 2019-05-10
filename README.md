@@ -58,3 +58,59 @@ The model uses Adam as optimizer with lr = 0.001 although the paper suggests usi
 The loss function used is MMSE (Masked Mean Square Error) and to evaluate performance, I used RMSE which is experimentally found to be square root of MMSE.
 
 At the end of the Training for 40 epochs, I acheived RMSE training loss of 0.5567 and validation loss of 0.39.
+
+## HyperParameter Tuning
+
+* **Activation Function**
+
+Trying different activation functions listed in the paper.
+
+<p>
+  <img src ="https://github.com/Chinmayrane16/DeepRecommender/blob/master/images/act_tr_loss.png" width="400" />
+  <img src="https://github.com/Chinmayrane16/DeepRecommender/blob/master/images/act_val_loss.png" width="400" /> 
+ </p>
+ 
+ We can see that selu and elu functions perform much better than any other activation function, exactly as stated in the paper.
+ 
+ * **Dropout Probability**
+ 
+ Tried 3 dropout probabilities - dp 0.0 , dp 0.25, dp 0.65
+ 
+ <p>
+  <img src ="https://github.com/Chinmayrane16/DeepRecommender/blob/master/images/dp_tr_loss.png" width="400" />
+  <img src="https://github.com/Chinmayrane16/DeepRecommender/blob/master/images/dp_val_loss.png" width="400" /> 
+ </p>
+ 
+ We can see that here since the data size is small therefore it's better to not use dropout.
+ 
+ * **Hidden Layer**
+ 
+ Tried experimenting with different sizes of the representation layer. I found the hypothesis true, that more the number of neurons in the hidden layer more better the representation. But there happens to be a case where the layer simply tries to copy the data from previous layers if you have overcomplete autoencoders. 
+ 
+Below are the results i found - 
+ 
+ <p>
+  <img src ="https://github.com/Chinmayrane16/DeepRecommender/blob/master/images/hl_tr_loss.png" width="400" />
+  <img src="https://github.com/Chinmayrane16/DeepRecommender/blob/master/images/hl_val_loss.png" width="400" /> 
+ </p>
+ 
+ * **Learning Rate**
+ 
+ Tried different learning rates - 
+ 
+  <p>
+  <img src ="https://github.com/Chinmayrane16/DeepRecommender/blob/master/images/lr_tr_loss.png" width="400" />
+  <img src="https://github.com/Chinmayrane16/DeepRecommender/blob/master/images/lr_val_loss.png" width="400" /> 
+ </p>
+ 
+ We cannot choose a learning rate too high otherwise the loss will go on fluctuating too rapidly and we cannot choose a learning rate too slow otherwise it will take lot of time to converge. Personally, I found learning rate 0.001 to be the best among all.
+ 
+ ## Conclusion
+ 
+ <p align="center">
+  <img src ="https://github.com/Chinmayrane16/DeepRecommender/blob/master/images/tr_val_loss.png" width="400" />
+ </p>
+ 
+ 
+ 
+ ## References
