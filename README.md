@@ -119,3 +119,7 @@ I have used 7 layer autoencoder architecture (including the input and the output
  
  ## References
 
+[https://arxiv.org/pdf/1708.01715v3.pdf](https://arxiv.org/pdf/1708.01715v3.pdf)
+[https://grouplens.org/datasets/movielens/](https://grouplens.org/datasets/movielens/)
+[https://towardsdatascience.com/deep-autoencoders-for-collaborative-filtering-6cf8d25bbf1d](https://towardsdatascience.com/deep-autoencoders-for-collaborative-filtering-6cf8d25bbf1d)
+[https://github.com/NVIDIA/DeepRecommender](https://github.com/NVIDIA/DeepRecommender)
