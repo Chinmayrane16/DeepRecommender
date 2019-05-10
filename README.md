@@ -49,10 +49,10 @@ The model has 7 layers having the layer sizes [n, 512, 512, 1024, 512, 512, n]. 
 
 | Hyperparameters| Value         | Explanation  |
 | -------------  |:-------------:| -----:|
-| learning_rate  | 0.001        | learning rate |
-| num of hidden neurons  | 1024    | Number of neurons in each layer |
-| dropout | 0.0 | dropout probability |
 | activation_function | selu | type of non-linearity |
+| dropout | 0.0 | dropout probability |
+| num of hidden neurons  | 1024    | Number of neurons in each layer |
+| learning_rate  | 0.001        | learning rate |
 
 The model uses Adam as optimizer with lr = 0.001 although the paper suggests using SGD with lr = 0.001 and momentum = 0.9.<br>
 The loss function used is MMSE (Masked Mean Square Error) and to evaluate performance, I used RMSE which is experimentally found to be square root of MMSE.
@@ -111,6 +111,11 @@ Below are the results i found -
   <img src ="https://github.com/Chinmayrane16/DeepRecommender/blob/master/images/tr_val_loss.png" width="400" />
  </p>
  
+In this repository, I have used Movielens 100k ratings dataset. I have segregated the dataset into train and validation sets according to the timestamp. I have chosen a timestamp such that validation data consists of the ratings 2 months later which we need to predict. 
+
+I have used 7 layer autoencoder architecture (including the input and the output layer) as stated in the paper with 1024 hidden layer neurons. Moreover, I have found 'selu' activation function to perform better on this dataset. I have used Adam optimizer to adapt weights with a learning rate of 0.001 . I have tried using different dropout probabilities but found that the higher the dropout the worse the performance as opposed to higher dropout probability stated in the paper, I guess this contradicition comes from different sizes of our datasets. Finally, at the end of 40 epochs, I have acheived RMSE training loss of 0.5567 and validation loss of 0.39 .
+ 
  
  
  ## References
+
