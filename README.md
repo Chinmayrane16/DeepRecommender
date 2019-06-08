@@ -29,10 +29,10 @@ I have used the [Movielens 100k](https://grouplens.org/datasets/movielens/100k/)
 You can find the dataset on this repository - [ml-latest-small](https://github.com/Chinmayrane16/DeepRecommender/tree/master/ml-latest-small)
 
 ## Requirements
-* python = 3.6
-* pytorch = 1.0
-* pandas = 0.22.0
-* numpy = 1.14.3
+* [python](https://www.python.org/downloads/) = 3.6
+* [pytorch](https://pytorch.org/) = 1.0
+* [pandas](https://pandas.pydata.org/) = 0.22.0
+* [numpy](https://www.numpy.org/) = 1.14.3
 * CUDA (recommended version >= 8.0)
 
 
