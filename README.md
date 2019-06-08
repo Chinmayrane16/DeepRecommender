@@ -33,7 +33,7 @@ You can find the dataset on this repository - [ml-latest-small](https://github.c
 * [pytorch](https://pytorch.org/) = 1.0
 * [pandas](https://pandas.pydata.org/) = 0.22.0
 * [numpy](https://www.numpy.org/) = 1.14.3
-* CUDA (recommended version >= 8.0)
+* [CUDA](https://developer.nvidia.com/cuda-zone) (recommended version >= 8.0)
 
 
 ## Dataset Preprocessing
