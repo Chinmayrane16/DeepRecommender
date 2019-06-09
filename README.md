@@ -125,4 +125,4 @@ I have used 7 layer autoencoder architecture (including the input and the output
 [https://github.com/NVIDIA/DeepRecommender](https://github.com/NVIDIA/DeepRecommender)<br>
 [https://github.com/shivamsaboo17](https://github.com/shivamsaboo17)<br>
 [https://www.jeremyjordan.me/autoencoders/](https://www.jeremyjordan.me/autoencoders/)<br>
-[https://www.youtube.com/watch?v=dktAvwmMwgQ](https://www.youtube.com/watch?v=dktAvwmMwgQ)<br>
+[https://www.youtube.com/platform.ai](https://www.youtube.com/watch?v=dktAvwmMwgQ)<br>
