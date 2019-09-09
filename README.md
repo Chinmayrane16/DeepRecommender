@@ -55,7 +55,7 @@ The model has 7 layers having the layer sizes [n, 512, 512, 1024, 512, 512, n]. 
 | learning_rate  | 0.001        | learning rate |
 
 The model uses Adam as optimizer with lr = 0.001 although the paper suggests using SGD with lr = 0.001 and momentum = 0.9.<br>
-The loss function used is MMSE (Masked Mean Square Error) and to evaluate performance, I used RMSE which is experimentally found to be square root of MMSE.
+The loss function used is MMSE (Masked Mean Square Error) and to evaluate performance, I have used RMSE which is experimentally found to be square root of MMSE.
 
 At the end of the Training for 40 epochs, I acheived RMSE training loss of 0.5567 and validation loss of 0.39.
 
